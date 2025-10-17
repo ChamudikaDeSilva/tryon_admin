@@ -1,21 +1,20 @@
 "use client";
 
-
+import { useAuth } from "@/hooks/useAuth";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
-import { useAuth } from "./hooks/useAuth";
 
 export const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
   const { token, loading } = useAuth();
   const router = useRouter();
 
   useEffect(() => {
-    if (!token && !loading) {
-      router.push("/");
+    if (!loading && !token) {
+      router.push("/login");
     }
-  }, [token, router, loading]);
+  }, [token, loading, router]);
 
-  if (!token) return null; // or a spinner
+  if (loading) return <div>Loading...</div>;
 
-  return <>{children}</>;
+  return <>{token ? children : null}</>;
 };
