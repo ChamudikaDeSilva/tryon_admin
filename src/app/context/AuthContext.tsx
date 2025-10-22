@@ -58,7 +58,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     authService.logout();
     setUser(null);
     setToken(null);
-    router.push("/login");
+    router.push("/");
   };
 
   return (

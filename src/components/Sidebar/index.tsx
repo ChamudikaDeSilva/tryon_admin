@@ -338,11 +338,11 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
           <Link href="/" className="flex w-full justify-center">
             <Image
               width={120}
-              height={10} // 👈 reduced height (was 24 earlier)
+              height={10} 
               src="/images/logo/logo.png"
               alt="Logo"
               priority
-              className="object-contain" // 👈 keeps aspect ratio clean
+              className="object-contain" 
             />
           </Link>
 

@@ -63,7 +63,7 @@ const FormElements = () => {
                 />
               </div>
             </div>
-          </div>
+          </div> 
 
           {/* <!-- Toggle switch input --> */}
           <div className="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
