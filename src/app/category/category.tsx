@@ -3,6 +3,7 @@
 import React from "react";
 import DefaultLayout from "@/components/Layouts/DefaultLayout";
 import { Package } from "@/types/package";
+import { useRouter } from "next/navigation";
 
 
 const packageData: Package[] = [
@@ -33,6 +34,11 @@ const packageData: Package[] = [
 ];
 
 const Category: React.FC = () => {
+  const router= useRouter();
+
+  const handleAddCategory = () =>{
+    router.push('/category/form');
+  };
 
   return (
     <DefaultLayout>
@@ -41,7 +47,8 @@ const Category: React.FC = () => {
         <h2 className="text-2xl font-semibold text-black dark:text-white">
           Categories
         </h2>
-        <button className="flex items-center gap-2 rounded-md bg-primary px-4 py-2 text-sm font-medium text-white shadow-md transition-all duration-200 hover:bg-primary/90 hover:shadow-lg">
+        <button className="flex items-center gap-2 rounded-md bg-primary px-4 py-2 text-sm font-medium text-white shadow-md transition-all duration-200 hover:bg-primary/90 hover:shadow-lg"
+        onClick={handleAddCategory}>
           <span className="text-lg">+</span> Add Category
         </button>
       </div>

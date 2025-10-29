@@ -22,7 +22,7 @@ export const authService = {
     const user = localStorage.getItem("user");
     return user ? JSON.parse(user) : null;
   },
-
+ 
   getToken: () => {
     return localStorage.getItem("token");
   },
