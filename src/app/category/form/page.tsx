@@ -6,6 +6,7 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { categorySchema, CategoryInput } from "@/lib/validation/categorySchema";
 import { categoryService } from "@/lib/services/categoryService";
+import DefaultLayout from "@/components/Layouts/DefaultLayout";
 
 export default function CategoryForm() {
   const router = useRouter();
@@ -39,6 +40,7 @@ export default function CategoryForm() {
   };
 
   return (
+     <DefaultLayout>
     <form
       onSubmit={handleSubmit(onSubmit)}
       className="max-w-lg mx-auto bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md"
@@ -93,5 +95,6 @@ export default function CategoryForm() {
         {loading ? "Saving..." : "Save Category"}
       </button>
     </form>
+    </DefaultLayout>
   );
 }

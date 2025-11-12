@@ -48,7 +48,7 @@ const Category: React.FC = () => {
           Categories
         </h2>
         <button className="flex items-center gap-2 rounded-md bg-primary px-4 py-2 text-sm font-medium text-white shadow-md transition-all duration-200 hover:bg-primary/90 hover:shadow-lg"
-        onClick={handleAddCategory}>
+          onClick={handleAddCategory}>
           <span className="text-lg">+</span> Add Category
         </button>
       </div>
