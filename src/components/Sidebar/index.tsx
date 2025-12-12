@@ -339,7 +339,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
             <Image
               width={120}
               height={10} 
-              src="/images/logo/logo.png"
+              src="/images/logo/gillian_black.png"
               alt="Logo"
               priority
               className="object-contain" 
