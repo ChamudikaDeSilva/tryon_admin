@@ -20,7 +20,7 @@ export default function CategoryForm() {
   } = useForm<CategoryInput>({
     resolver: zodResolver(categorySchema),
     defaultValues: {
-      status: "active", // default value for select
+      is_active: true, // default value for select
     },
   });
 
@@ -30,7 +30,7 @@ export default function CategoryForm() {
       setLoading(true);
       await categoryService.create(data);
       alert("Category created successfully!"); // replace with toast in production
-      router.push("/categories");
+      router.push("/category");
     } catch (error) {
       console.error("Error creating category:", error);
       alert("Failed to create category. Please try again.");
@@ -72,19 +72,21 @@ export default function CategoryForm() {
       </div>
 
       {/* Status */}
-      <div className="mb-4">
-        <label className="block text-sm font-medium mb-1">Status</label>
-        <select
-          {...register("status")}
-          className="w-full border border-gray-300 rounded-md p-2"
-        >
-          <option value="active">Active</option>
-          <option value="inactive">Inactive</option>
-        </select>
-        {errors.status && (
-          <p className="text-red-500 text-sm">{errors.status.message}</p>
-        )}
+      <div className="mb-4 flex items-center gap-2">
+        <input
+          type="checkbox"
+          {...register("is_active")}
+          className="h-4 w-4"
+        />
+        <label className="text-sm font-medium">
+          Active
+        </label>
       </div>
+
+      {errors.is_active && (
+        <p className="text-red-500 text-sm">{errors.is_active.message}</p>
+      )}
+
 
       {/* Submit */}
       <button
@@ -92,7 +94,7 @@ export default function CategoryForm() {
         disabled={loading}
         className="bg-primary text-white px-4 py-2 rounded-md hover:bg-primary/90"
       >
-        {loading ? "Saving..." : "Save Category"}
+        {loading ? "Saving..." : "Save"}
       </button>
     </form>
     </DefaultLayout>

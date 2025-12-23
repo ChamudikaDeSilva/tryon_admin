@@ -5,13 +5,14 @@ export interface Category {
   id: number;
   name: string;
   description?: string;
-  status?: string;
+  is_active?: boolean;
 }
 
 class CategoryService extends BaseService<Category> {
   constructor() {
     super("categories");
   }
+  
 
   async getActiveCategories() {
     return categoryAPI.getActiveCategories();
