@@ -47,7 +47,26 @@ const menuGroups = [
         ),
         label: "Dashboard",
         route: "#",
-        children: [{ label: "eCommerce", route: "/" }],
+        children: [{ label: "eCommerce", route: "/dashboard" }],
+      },
+      {
+        icon: (
+          <svg
+            className="fill-current"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M21 7.5l-9-4.5-9 4.5 9 4.5 9-4.5z" />
+            <path d="M3 7.5v9l9 4.5v-9l-9-4.5z" />
+            <path d="M21 7.5v9l-9 4.5v-9l9-4.5z" />
+          </svg>
+        ),
+
+        label: "Product Management",
+        route: "#",
+        children: [{ label: "Brands", route: "/brand" }, { label: "Categories", route: "/category" }],
       },
       {
         icon: (

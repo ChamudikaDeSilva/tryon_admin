@@ -95,11 +95,11 @@ const CategoryPage: React.FC = () => {
             <table className="w-full table-auto">
               <thead>
                 <tr className="bg-gray-2 text-left dark:bg-meta-4">
+                  <th className="px-4 py-4">Actions</th>
                   <th className="px-4 py-4">ID</th>
                   <th className="px-4 py-4">Name</th>
                   <th className="px-4 py-4">Description</th>
-                  <th className="px-4 py-4">Status</th>
-                  <th className="px-4 py-4">Actions</th>
+                  <th className="px-4 py-4">Status</th>                 
                 </tr>
               </thead>
               <tbody>
@@ -112,26 +112,6 @@ const CategoryPage: React.FC = () => {
                 ) : (
                   categories.map((category) => (
                     <tr key={category.id}>
-                      <td className="border-b px-4 py-5">
-                        {category.id}
-                      </td>
-                      <td className="border-b px-4 py-5">
-                        {category.name}
-                      </td>
-                      <td className="border-b px-4 py-5">
-                        {category.description}
-                      </td>
-                      <td className="border-b px-4 py-5">
-                        <span
-                          className={`inline-flex rounded-full bg-opacity-10 px-3 py-1 text-sm font-medium ${
-                            category.is_active
-                              ? "bg-success text-success"
-                              : "bg-danger text-danger"
-                          }`}
-                        >
-                          {category.is_active ? "Active" : "Inactive"}
-                        </span>
-                      </td>
                       <td className="border-b px-4 py-5">
                         <div className="flex items-center gap-4">
                           
@@ -160,7 +140,26 @@ const CategoryPage: React.FC = () => {
                           </Tooltip>
                         </div>
                       </td>
-
+                      <td className="border-b px-4 py-5">
+                        {category.id}
+                      </td>
+                      <td className="border-b px-4 py-5">
+                        {category.name}
+                      </td>
+                      <td className="border-b px-4 py-5">
+                        {category.description}
+                      </td>
+                      <td className="border-b px-4 py-5">
+                        <span
+                          className={`inline-flex rounded-full bg-opacity-10 px-3 py-1 text-sm font-medium ${
+                            category.is_active
+                              ? "bg-success text-success"
+                              : "bg-danger text-danger"
+                          }`}
+                        >
+                          {category.is_active ? "Active" : "Inactive"}
+                        </span>
+                      </td>
                     </tr>
                   ))
                 )}
