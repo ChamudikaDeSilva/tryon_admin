@@ -64,9 +64,9 @@ const menuGroups = [
           </svg>
         ),
 
-        label: "Product Management",
+        label: "Meta Data",
         route: "#",
-        children: [{ label: "Brands", route: "/brand" }, { label: "Categories", route: "/category" }],
+        children: [{ label: "Brands", route: "/brand" }, { label: "Categories", route: "/category" }, { label: "Colors", route: "/color" }],
       },
       {
         icon: (
