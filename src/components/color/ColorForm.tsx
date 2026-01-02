@@ -80,7 +80,7 @@ export default function ColorForm({ colorId }: Props) {
       {/* Name */}
       <div className="mb-4">
         <label className="block text-sm font-medium mb-1">Name</label>
-        <input {...register("name")} className="w-full border rounded-md p-2" />
+        <input {...register("name")} className="w-full rounded-lg border-[1.5px] border-stroke bg-transparent px-5 py-3 text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
         {errors.name && (
           <p className="text-red-500 text-sm">{errors.name.message}</p>
         )}
@@ -88,7 +88,7 @@ export default function ColorForm({ colorId }: Props) {
       {/* Color Code */}
         <div className="mb-4">
             <label className="block text-sm font-medium mb-1">Color Code</label>
-            <input {...register("color_code")} className="w-full border rounded-md p-2" />
+            <input {...register("color_code")} className="w-full rounded-lg border-[1.5px] border-stroke bg-transparent px-5 py-3 text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
             {errors.color_code && (
             <p className="text-red-500 text-sm">{errors.color_code.message}</p>
             )}
